@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 from flask import request
 from flask import jsonify
 from pymongo import MongoClient
@@ -38,4 +40,4 @@ def get_events():
         array.append(item)
         print(item)
     print('exit get_events')
-    return jsonify(code=200, msg='success', data=json.dumps(array))
+    return jsonify(code=200, msg='success', data=json.dumps(array, ensure_ascii=False))
